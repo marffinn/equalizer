@@ -1,0 +1,1 @@
+The NSIS installer for your EqualizerApp has been successfully created! You can find it as `EqualizerApp_Installer.exe` in the project's root directory (`c:\Users\marff\Documents\augment-projects\equalizer\`).

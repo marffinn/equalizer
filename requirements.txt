@@ -1,0 +1,6 @@
+ttkbootstrap
+numpy
+pyaudio
+soundfile
+scipy
+pydub
