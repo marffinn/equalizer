@@ -1,0 +1,26 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  release:
+    runs-on: self-hosted
+    steps:
+    - uses: actions/checkout@v4
+    
+    - name: Build installer
+      run: |
+        pyinstaller EqualizerApp.spec
+        makensis equalizer_installer.nsi
+    
+    - name: Create Release
+      uses: softprops/action-gh-release@v1
+      with:
+        files: EqualizerApp_Installer.exe
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
